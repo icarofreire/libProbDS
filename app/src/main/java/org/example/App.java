@@ -13,6 +13,7 @@ public class App {
 
         // SkipList.teste();
         // SkipList2.teste();
-        LossyCounting.teste();
+        // LossyCounting.teste();
+        TDigest.teste();
     }
 }
