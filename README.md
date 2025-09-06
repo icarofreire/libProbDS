@@ -9,3 +9,9 @@ Lib para estruturas de dados probabilísticas.
 ...
 ```
 
+## Estruturas Implementadas
+
+- [x] Skip List
+- [x] T-Digest
+- [x] Lossy Counting
+- [x] Quotient Filter
