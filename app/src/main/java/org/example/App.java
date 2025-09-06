@@ -15,6 +15,7 @@ public class App {
         // SkipList2.teste();
         // LossyCounting.teste();
         // TDigest.teste();
-        QuotientFilter.teste();
+        // QuotientFilter.teste();
+        CuckooFilter.teste();
     }
 }
