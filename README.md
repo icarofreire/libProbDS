@@ -6,7 +6,7 @@ Lib para estruturas de dados probabilísticas.
 ## Execução
 
 ```
-...
+$ gradle run
 ```
 
 ## Estruturas Implementadas
