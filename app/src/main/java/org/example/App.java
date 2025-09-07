@@ -16,6 +16,7 @@ public class App {
         // LossyCounting.teste();
         // TDigest.teste();
         // QuotientFilter.teste();
-        CuckooFilter.teste();
+        // CuckooFilter.teste();
+        HyperLogLog.teste();
     }
 }

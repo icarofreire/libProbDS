@@ -16,3 +16,4 @@ $ gradle run
 - [x] Lossy Counting
 - [x] Quotient Filter
 - [x] Cuckoo Filter
+- [ ] HyperLogLog
