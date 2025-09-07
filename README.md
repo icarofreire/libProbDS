@@ -15,4 +15,4 @@ $ gradle run
 - [x] T-Digest
 - [x] Lossy Counting
 - [x] Quotient Filter
-- [ ] Cuckoo Filter
+- [x] Cuckoo Filter

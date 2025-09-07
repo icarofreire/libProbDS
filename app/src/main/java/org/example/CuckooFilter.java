@@ -63,14 +63,15 @@ class CuckooFilter {
     }
 
     // Hash function to generate a hash value for the input
-    public int hash(String value) {
-        return hashStringToBigIntSHA3_256(value).abs().intValue();
+    public int hash(String value, boolean abs) {
+        int bign = hashStringToBigIntSHA3_256(value).abs().intValue();
+        return (abs) ? (Math.abs(bign)) : (bign);
     }
     
     public BigInteger hashStringToBigIntSHA3_256(String inputString) {
         try {
             // Get a SHA3-256 MessageDigest instance
-            MessageDigest digest = MessageDigest.getInstance("SHA3-256");
+            MessageDigest digest = MessageDigest.getInstance("SHA3-256"); //SHA-256
 
             // Hash the input string bytes
             byte[] hashBytes = digest.digest(inputString.getBytes(StandardCharsets.UTF_8));
@@ -88,12 +89,9 @@ class CuckooFilter {
 
     // Compute the fingerprint of an element using a hash function
     public int computeFingerprint(String element) {
-        // Convert element to string
-        // const str = String(element);
-
         // Use a hash function to compute the fingerprint
         // Here, we simply take the lower 'fingerprintSize' bits of the hash value
-        final int hash = this.hash(element);
+        final int hash = this.hash(element, true);
         final int fingerprint = hash & ((1 << this.fingerprintSize) - 1);
 
         return fingerprint;
@@ -102,8 +100,8 @@ class CuckooFilter {
     // Get the fingerprint and index of the bucket for an element
     public Fingerprint getFingerprintAndIndex(String element) {
         final int fingerprint = this.computeFingerprint(element);
-        final int index1 = this.hash(element) % this.capacity;
-        final int index2 = (index1 ^ this.hash(String.valueOf(fingerprint))) % this.capacity;
+        final int index1 = this.hash(element, true) % this.capacity;
+        final int index2 = (index1 ^ this.hash(String.valueOf(fingerprint), true)) % this.capacity;
 
         return new Fingerprint(fingerprint, index1, index2);
     }
