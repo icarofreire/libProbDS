@@ -17,3 +17,4 @@ $ gradle run
 - [x] Quotient Filter
 - [x] Cuckoo Filter
 - [ ] HyperLogLog
+- [x] Count-Min Sketch

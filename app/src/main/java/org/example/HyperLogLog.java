@@ -81,7 +81,7 @@ public class HyperLogLog {
         final double alpha = this.getAlpha(this.precision); // Get the alpha correction factor based on the precision
         final OptionalInt optsum = Arrays.stream(this.registers).reduce((accumulator, register) -> {
             // Compute the sum of 1/(2^register) for all registers
-            return accumulator + (int)Math.pow(1 / 2, register);
+            return accumulator + 1 / (int)Math.pow(2, register);
         });
         int sum = optsum.orElse(0);
         final double estimate = alpha * (1 / sum); // Compute the estimated cardinality based on the alpha factor and sum

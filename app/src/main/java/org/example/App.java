@@ -17,6 +17,7 @@ public class App {
         // TDigest.teste();
         // QuotientFilter.teste();
         // CuckooFilter.teste();
-        HyperLogLog.teste();
+        // HyperLogLog.teste();
+        CountMinSketch.teste();
     }
 }
