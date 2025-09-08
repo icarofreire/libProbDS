@@ -18,6 +18,7 @@ public class App {
         // QuotientFilter.teste();
         // CuckooFilter.teste();
         // HyperLogLog.teste();
-        CountMinSketch.teste();
+        // CountMinSketch.teste();
+        BloomFilter.teste();
     }
 }

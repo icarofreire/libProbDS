@@ -18,3 +18,4 @@ $ gradle run
 - [x] Cuckoo Filter
 - [ ] HyperLogLog
 - [x] Count-Min Sketch
+- [x] Bloom Filter
