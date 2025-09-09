@@ -23,6 +23,7 @@ public class Teste {
         // QuotientFilter.teste();
         // CuckooFilter.teste();
         HyperLogLog.teste();
+        HyperLogLog2.teste();
         // HyperLogLog2.teste();
         // CountMinSketch.teste();
         // BloomFilter.teste();
