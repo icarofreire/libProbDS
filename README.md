@@ -16,6 +16,6 @@ $ gradle run
 - [x] Lossy Counting
 - [x] Quotient Filter
 - [x] Cuckoo Filter
-- [ ] HyperLogLog
+- [x] HyperLogLog
 - [x] Count-Min Sketch
 - [x] Bloom Filter
