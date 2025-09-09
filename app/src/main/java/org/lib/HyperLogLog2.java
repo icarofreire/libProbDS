@@ -6,6 +6,10 @@ package org.lib;
 import java.util.Arrays;
 import java.util.HashSet;
 
+
+/**
+ * https://medium.com/@asishpanda444/hyperloglog-hll-4bb1f201524e
+ */
 public class HyperLogLog2 {
     private final int[] buckets;
     private final int numBuckets;
