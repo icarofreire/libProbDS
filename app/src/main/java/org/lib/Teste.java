@@ -15,6 +15,10 @@ public class Teste {
 		}
     }
 
+    /**
+     * Referência:
+     * https://medium.com/@tech.anikghosh/probabilistic-data-structures-db5d238008eb
+     */
     public static void testeAll(){
         // SkipList.teste();
         // SkipList2.teste();
