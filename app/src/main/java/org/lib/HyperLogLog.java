@@ -39,7 +39,8 @@ public class HyperLogLog {
 
     HyperLogLog(int precision) {
         this.precision = precision; // Number of bits used for counting leading zeros
-        this.registers = new int[(int)Math.pow(2, precision)]; // Array of registers
+        int numBuckets = 1 << precision;//(int)Math.pow(2, precision);
+        this.registers = new int[numBuckets]; // Array of registers
     }
 
     // Hash function to generate a hash value for the input
@@ -88,10 +89,6 @@ public class HyperLogLog {
 
         // Apply small range corrections
         if (estimate <= 2.5 * this.registers.length) {
-            //    const zeroCount = java.util.Arrays.stream(this.registers).filter(
-            //     (register) => register === 0
-            //    ).length;
-
                 int[] zeros = Arrays.stream(this.registers)
                             .filter(register -> register == 0)
                             .toArray();
@@ -165,17 +162,19 @@ public class HyperLogLog {
         alphaMap.put(8, 0.718);
         alphaMap.put(9, 0.72);
         alphaMap.put(10, 0.721);
+        // alphaMap.put(16, 0.673);
+        // alphaMap.put(32, 0.697);
+        // alphaMap.put(64, 0.709);
 
         if(alphaMap.containsKey(bitCount)){
             return alphaMap.get(bitCount);
         }
         return (0.7213 / (1 + 1.079 / (1 << bitCount)));
-        // return alphaMap.get(bitCount) || 0.7213 / (1 + 1.079 / (1 << bitCount));
     }
 
     public double linearCounting(int registerCount, int zeroCount) {
         // Apply linear counting correction to estimate the cardinality
-        return registerCount * Math.log(registerCount / zeroCount);
+        return registerCount * Math.log((double)registerCount / zeroCount);
     }
 
     public static void teste() {
